@@ -24,7 +24,8 @@ import HelpIcon from '@material-ui/icons/Help';
 import PublishIcon from '@material-ui/icons/Publish';
 import React, { useState, useEffect, useRef } from "react";
 import { Link as RouterLink, NavLink } from "react-router-dom";
-import AnuvaadLogo from "../../../../assets/HeaderTransparentLogo.png";
+// import AnuvaadLogo from "../../../../assets/HeaderTransparentLogo.png";
+import Lekhaanuvaadlogo from "../../../../assets/LekhaanuvaadlogoHeader.png";
 import configs from "../../../../configs/configs";
 import headerMenuConfig from "../../../../configs/headerMenuConfig";
 import history from "../../../../web.history";
@@ -189,7 +190,7 @@ export default function TopHeader(props) {
         drawerOpen: false,
     });
 
-    const [headerLogoImg, setHeaderLogoImg] = useState(AnuvaadLogo);
+    const [headerLogoImg, setHeaderLogoImg] = useState(Lekhaanuvaadlogo);
 
     const [showUserPopoverMenuAnchorEle, setShowUserPopoverMenuAnchorEle] = useState(null);
     const [showSettingsPopoverMenuAnchorEle, setShowSettingsPopoverMenuAnchorEle] = useState(null);
@@ -461,9 +462,12 @@ export default function TopHeader(props) {
     };
 
     const renderAnuvaadLogo = () => {
-        return<div style={{textAlign: "-webkit-center", paddingBottom: "0.1rem"}}><div><img
+        return<div style={{textAlign: "-webkit-center", paddingBottom: "0.1rem", display: "flex", alignItems: "flex-end"}}><div><img
             src={headerLogoImg}
             className={logo}
+            style={{
+                width: "3.5rem"
+            }}
             ref={logoRef}
             onClick={() => {
                 let defaultPagePath = (role === "TRANSLATOR" || role === "ANNOTATOR") ? "" : (role === "REVIEWER") ? "review-documents" : "user-details"
@@ -472,14 +476,14 @@ export default function TopHeader(props) {
             }
             onError={(({ currentTarget }) => {
                 currentTarget.onerror = null;
-                if (!currentTarget.src.includes(AnuvaadLogo)) {
-                    currentTarget.src = AnuvaadLogo;
+                if (!currentTarget.src.includes(Lekhaanuvaadlogo)) {
+                    currentTarget.src = Lekhaanuvaadlogo;
                     return
                 }
             })}
         /></div>
         <Typography variant="caption" style={{color: "#000000", fontWeight: "bold"}}>
-                Powered by EkStep Foundation
+                Powered by Bhashini
                 </Typography>
         </div> 
     };

@@ -34,6 +34,7 @@ import RegisterMFA from "../../../../flux/actions/apis/user/MFA_register";
 import VerifyMFA from "../../../../flux/actions/apis/user/MFA_verify";
 import OneTimeEmailUpdateModal from "./OneTimeEmailUpdateModal";
 import UpdateEmail from "../../../../flux/actions/apis/user/update_email";
+import {translate} from "../../../../assets/localisation";
 
 class Login extends React.Component {
   constructor(props) {
@@ -369,7 +370,7 @@ class Login extends React.Component {
     const { classes } = this.props;
 
     return (
-      <CustomCard title={"Sign in to Anuvaad"} cardContent={this.TextFields()} className={classes.headingStyle}>
+      <CustomCard title={`Sign in to ${translate("common.label.app_name")}`} cardContent={this.TextFields()} className={classes.headingStyle}>
         <Grid container spacing={2} style={{ width: "100%" }}>
           <Grid
             item

@@ -3,7 +3,7 @@ import { Grid, Hidden, MuiThemeProvider, Typography, withStyles } from "@materia
 // import AppInfo from "./AppInfo";
 import { useParams } from "react-router-dom";
 import LoginStyles from "../../../styles/web/LoginStyles";
-import Anuvaanlogo from "../../../../assets/Anuvaanlogo.png";
+import Lekhaanuvaadlogo from "../../../../assets/Lekhaanuvaadlogo.png";
 import ThemeDefault from "../../../theme/web/theme-default";
 import SignUp from "./SignUp";
 import Login from "./Login";
@@ -12,6 +12,7 @@ import SetPassword from './SetPassword';
 import Activate from './Activate';
 import SignUpRequest from './SignUpRequest';
 import ValidateAndOnboardUSer from './ValidateAndOnboardUSer';
+import {translate} from "../../../../assets/localisation";
 
 const UserManagement = (props) => {
     const { classes } = props;
@@ -19,20 +20,20 @@ const UserManagement = (props) => {
     const param = useParams();
     const renderPage = () => {
         switch (param && param.page) {
-            // case "signup":
-            //     return <SignUp />;
+            case "signup":
+                return <SignUp />;
             case "login":
                 return <Login location={props.location} />;
             case "forget-password":
                 return <UpdatePassword />;
             case "set-password":
                 return <SetPassword />;
-            case "verify-signup-request":
-                return <ValidateAndOnboardUSer />;    
+            // case "verify-signup-request":
+            //     return <ValidateAndOnboardUSer />;    
             case "activate":
                 return <Activate />;
-            case "request-signup":
-                return <SignUpRequest />;
+            // case "request-signup":
+            //     return <SignUpRequest />;
             default:
                 return <Login location={props.location} />;
 
@@ -45,12 +46,11 @@ const UserManagement = (props) => {
                 <Hidden only="xs">
                     <Grid item xs={10} sm={10} md={10} lg={10} xl={10}>
                         <img
-                            src={Anuvaanlogo}
+                            src={Lekhaanuvaadlogo}
                             alt="logo"
                             style={{
                                 width: "85px",
                                 margin: "10% 0px 0% 35px",
-                                borderRadius: "50%",
                             }}
                         />{" "}
                     </Grid>{" "}
@@ -65,7 +65,7 @@ const UserManagement = (props) => {
                             fontFamily: '"Rowdies", cursive,"Roboto" ,sans-serif',
                         }}
                     >
-                        Anuvaad
+                        {translate("common.label.app_name")}
                     </Typography>
                 </Grid>
                 <Hidden only="xs">
@@ -74,13 +74,13 @@ const UserManagement = (props) => {
                         className={classes.body}
                         style={{ margin: "20px 0px 50px 39px" }}
                     >
-                        Anuvaad is an open source platform to perform Document Translation
+                        {translate("common.label.app_name")} is an open source platform to perform Document Translation
                         and Digitization at scale with editing capabilities for various
                         Indic languages.
                     </Typography>
                 </Hidden>
                 <Typography style={{position: 'absolute', bottom: "0.5rem", margin: "20px 0px 50px 39px"}}>
-                Powered by EkStep Foundation
+                Powered by Bhashini
                 </Typography>
             </Grid>
         );

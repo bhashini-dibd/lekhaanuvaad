@@ -134,8 +134,8 @@ export default function DrawerAppBar(props) {
           </Button>
         </Grid>
       </Grid>
-      <Grid sx={{position: "absolute", bottom: 50, width: "100%"}}>      
-        <Typography variant="caption" sx={{fontWeight: "bold", color: "#000000"}}>Powered by EkStep Foundation</Typography>
+      <Grid sx={{position: "absolute", bottom: 50, width: "100%"}}>
+        <Typography variant="caption" sx={{fontWeight: "bold", color: "#000000"}}>Powered by Bhashini</Typography>
       </Grid>
     </Box>
   );
@@ -266,7 +266,7 @@ export default function DrawerAppBar(props) {
           >
             <Link to={`/`} style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
               <img src={Anuvaanlogo} style={{ maxWidth: "83px" }} alt="logo" />
-              <Typography variant="caption" sx={{fontWeight: "bold", color: "#000000", marginTop: -1.5}}>Powered by EkStep Foundation</Typography>
+              <Typography variant="caption" sx={{fontWeight: "bold", color: "#000000", marginTop: -1.5}}>Powered by Bhashini</Typography>
             </Link>
           </Grid>
         </Toolbar>
