@@ -1,4 +1,5 @@
 const localization_EN_Data = {
+  "common.label.app_name": "Lekhaanuvaad",
   "common.page.label.active": "Active",
   "common.page.button.reset": 'Reset',
   "dashboard.page.heading.title": "Translate Sentence",
@@ -446,6 +447,7 @@ const localization_EN_Data = {
 };
 
 const localization_HI_Data = {
+  "common.label.app_name": "लेखानुवाद",
   "dashboard.page.heading.title": "अनुवाद करे",
   "dashbord.page.title.anuvaadModel": "अनुवाद मॉडल",
   "common.page.label.sourceLang": "कृपया स्रोत भाषा का चयन करें",
