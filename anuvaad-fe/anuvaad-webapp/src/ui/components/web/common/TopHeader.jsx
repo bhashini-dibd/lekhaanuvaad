@@ -462,11 +462,12 @@ export default function TopHeader(props) {
     };
 
     const renderAnuvaadLogo = () => {
-        return<div style={{textAlign: "-webkit-center", paddingBottom: "0.1rem", display: "flex", alignItems: "flex-end"}}><div><img
+        return<div style={{textAlign: "-webkit-center", paddingBottom: "0.1rem"}}><div style={{display: "grid", justifyContent: "center"}}><img
             src={headerLogoImg}
             className={logo}
             style={{
-                width: "3.5rem"
+                width: "3.5rem",
+                padding: "0.6rem 0 1.1rem"
             }}
             ref={logoRef}
             onClick={() => {
@@ -482,7 +483,7 @@ export default function TopHeader(props) {
                 }
             })}
         /></div>
-        <Typography variant="caption" style={{color: "#000000", fontWeight: "bold"}}>
+        <Typography variant="caption" style={{color: "#000000"}}>
                 Powered by Bhashini
                 </Typography>
         </div> 
@@ -743,7 +744,7 @@ export default function TopHeader(props) {
 
     return (
         <header>
-            <AppBar className={header}>
+            <AppBar className={header} style={{left: "0"}}>
                 {mobileView ? displayMobile() : displayDesktop()}
             </AppBar>
         </header>
