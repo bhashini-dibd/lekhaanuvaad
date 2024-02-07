@@ -39,7 +39,7 @@ export default class Signup extends API {
         "email":this.email,
         "phoneNo":"",
         "roles":[{"roleCode":"TRANSLATOR","roleDesc":"Has access to translation related resources"}],
-        "orgID" : "ANUVAAD"
+        "orgID" : "BHASHINI"
     }]}
     }
 
