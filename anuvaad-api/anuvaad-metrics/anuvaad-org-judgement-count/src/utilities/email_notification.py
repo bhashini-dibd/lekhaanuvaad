@@ -36,16 +36,16 @@ def generate_email_notification(users, sting_data):
 
 def send_email(message):
     try:
-        with smtplib.SMTP_SSL(
+        with smtplib.SMTP(
             config.MAIL_SETTINGS["MAIL_SERVER"], config.MAIL_SETTINGS["MAIL_PORT"]
         ) as server:
+            server.starttls()
             server.login(
                 config.MAIL_SETTINGS["MAIL_USERNAME"],
                 config.MAIL_SETTINGS["MAIL_PASSWORD"],
             )
             # Prefer the modern send_message method
             server.send_message(message)
-            server.close()
             del message["From"]
             del message["To"]
     except Exception as e:

@@ -150,9 +150,9 @@ def get_trans_user_data_from_db_cron():
         )
         return
 
-@schedule_job.scheduled_job(
-    "cron", id="reviewer_data_job_1", day_of_week="mon-fri", hour="08,18", minute="00"
-)
+# @schedule_job.scheduled_job(
+#     "cron", id="reviewer_data_job_1", day_of_week="mon-fri", hour="08,18", minute="00"
+# )
 def get_reviewer_data(base=False):
     try:
         log_info("cron for reviewer data collection started", MODULE_CONTEXT)
@@ -187,10 +187,10 @@ def get_reviewer_data(base=False):
         log_exception(f"Generated alert email in exception reviewer-data-cron job : {str(e)}", MODULE_CONTEXT, e,)
     return None
 
-def manual_start_reviewerdata_scheduler(base):
-    for job in schedule_job.get_jobs():
-        if job.id == "reviewer_data_job_1":
-            job.func(base=base)
+# def manual_start_reviewerdata_scheduler(base):
+#     for job in schedule_job.get_jobs():
+#         if job.id == "reviewer_data_job_1":
+#             job.func(base=base)
 
 def manual_start_transuserdata_scheduler():
     for job in schedule_job.get_jobs():
@@ -198,8 +198,8 @@ def manual_start_transuserdata_scheduler():
             job.func()
 
 # static run (only once when server starts)
-manual_start_reviewerdata_scheduler(base=True)
-manual_start_reviewerdata_scheduler(base=False)
+# manual_start_reviewerdata_scheduler(base=True)
+# manual_start_reviewerdata_scheduler(base=False)
 manual_start_transuserdata_scheduler()
 
 # initiate cron job
