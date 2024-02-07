@@ -26,7 +26,7 @@ from services import (
 )
 import uuid
 import requests
-from .scheduler_jobs import manual_start_reviewerdata_scheduler
+# from .scheduler_jobs import manual_start_reviewerdata_scheduler
 
 # from flask_mail import Mail, Message
 # from flask import render_template
@@ -427,7 +427,7 @@ def update_reviewer_data():
         return None
     body = request.get_json()
     base = bool(body.get('base',False))
-    manual_start_reviewerdata_scheduler(base)
+    # manual_start_reviewerdata_scheduler(base)
     out = CustomResponse(Status.SUCCESS.value, f"updated reviewer data for base={base}")
     return out.getres()
 
