@@ -1,5 +1,5 @@
 const localization_EN_Data = {
-  "common.label.app_name": "Lekhaanuvaad",
+  "common.label.app_name": "Lipianuvaad",
   "common.page.label.active": "Active",
   "common.page.button.reset": 'Reset',
   "dashboard.page.heading.title": "Translate Sentence",
